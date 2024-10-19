@@ -27,8 +27,10 @@ const getDateTimeString = () => {
     const now = new Date();
 
     // get and format the date like in macOS
-    const date = formatDate(now); // e.g. 'Sat 19 Oct'
-    
+    const date =
+        formatDate(now) // e.g. 'Sat, 19 Oct'
+        .replace(',', ''); // e.g. 'Sat 19 Oct'
+
     // get and format the time like in macOS
     const time = formatTime(now); // e.g. '21:39'
 
