@@ -16,7 +16,13 @@ const timeFormatOptions = { hour: '2-digit', minute: '2-digit' };
 const getTimeFormatter = () => new Intl.DateTimeFormat(getLocale(), timeFormatOptions);
 const formatTime = (date) => getTimeFormatter().format(date);
 
-const getDateTimeString = (setter) => {
+/**
+ * @returns {string} The current date/time, formatted as in macOS
+ * @example
+ * const dateTime = getDateTimeString();
+ * console.log(dateTime); // 'Sat 19 Oct 21:39'
+ */
+const getDateTimeString = () => {
     // get the current date
     const now = new Date();
 
@@ -31,19 +37,44 @@ const getDateTimeString = (setter) => {
 };
 
 /**
+ * @summary Updates the shown date/time every second
+ * @param {function} setDateTime - the React useState setter function for the
+ *                                 date/time string
+ * @returns {void}
+ */
+const updateEverySecond = (setDateTime) => {
+    // run this stuff after the component is mounted in the page
+    const callback = () => {
+        // pass the formatted string to setDateTime
+        const updateDateTimeString = () => setDateTime(getDateTimeString());
+
+        // update straight away so that we don't have a situation where the widget
+        // is empty for the first second that the page is loaded
+        updateDateTimeString();
+
+        // call 'updateDateTimeString' every second
+        const second = 1000;
+        const id = setInterval(updateDateTimeString, second);
+
+        // Cleanup function - clear interval when component unmounts
+        const cleanup = () => clearInterval(id)
+        return cleanup;
+    };
+
+    return useEffect(callback, []);
+};
+
+/**
  * @summary Represents the widget on the far right of the menu bar which shows the
  * date and time.
  * @description An example is "Sat 19 Oct 21:18"
  * @returns {React.JSX.Element}
  */
 export default function DateAndTime() {
+    // the string that will be shown to the user in the widget
+    const [ dateTime, setDateTime ] = useState('');
 
-    const initialDateTime = getDateTimeString();
-    const [ dateTime, setDateTime ] = useState(initialDateTime);
-
-    // update the shown date/time every second
-    const updateDateTime = () => setDateTime(getDateTimeString());
-    setInterval(updateDateTime, 1000);
+    updateEverySecond(setDateTime);
 
     return (
         <div className="date-and-time">
