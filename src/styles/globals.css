@@ -26,6 +26,17 @@ body {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* shadow */
 }
 
+.application-menu {
+    display: flex;
+    justify-content: flex-start; /* Pack on left side */
+    gap: 12px;
+}
+
+/* Make the first menu have bold text */
+.application-menu div:nth-child(2) {
+    font-weight: bold;
+}
+
 .date-and-time {
     /* Align on far right of menu bar */
     float: right;
