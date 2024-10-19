@@ -30,7 +30,7 @@ const getMenus = () => menuNames.map(getMenu);
  */
 export default function AppMenus() {
     return (
-        <div className="application-menu">
+        <div className="app-menus">
             {getMenus()}
         </div>
     );

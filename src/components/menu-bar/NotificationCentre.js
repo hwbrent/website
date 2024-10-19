@@ -85,7 +85,7 @@ export default function NotificationCentre() {
     updateEverySecond(setDateTime);
 
     return (
-        <div className="date-and-time">
+        <div className="notification-centre">
             {dateTime}
         </div>
     );
