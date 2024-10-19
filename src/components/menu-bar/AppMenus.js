@@ -4,7 +4,7 @@
  * menus, which change based on the currently active app.
  * @returns {React.JSX}
  */
-export default function ApplicationMenu() {
+export default function AppMenus() {
     return (
         <div className="application-menu"></div>
     );

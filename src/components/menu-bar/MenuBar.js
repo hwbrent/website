@@ -1,10 +1,10 @@
-import ApplicationMenu from './ApplicationMenu';
+import AppMenus from './AppMenus';
 import NotificationCentre from './NotificationCentre';
 
 export default function MenuBar() {
     return (
         <div className="menu-bar">
-            <ApplicationMenu />
+            <AppMenus />
             <NotificationCentre />
         </div>
     );
