@@ -6,6 +6,7 @@ body {
     /* apple font */
     font-family: -apple-system, BlinkMacSystemFont, sans-serif;
 
+    /* source: https://512pixels.net/projects/default-mac-wallpapers-in-5k/#gallery-6 */
     background-image: url('../../public/wallpaper-light.jpg');
 }
 
