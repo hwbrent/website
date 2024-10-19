@@ -3,6 +3,9 @@ body {
     height: 100%;
     overflow: hidden;
 
+    /* apple font */
+    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+
     background-image: url('../../public/wallpaper-light.jpg');
 }
 
