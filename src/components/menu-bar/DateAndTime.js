@@ -6,7 +6,7 @@ import { useState, useEffect } from "react";
  * @example
  * console.log(getLocale()); // "en-US"
  */
-const getLocale = () => window?.navigator?.language || 'en-US';
+const getLocale = () => global?.navigator?.language || 'en-US';
 
 const dateFormatOptions = { weekday: 'short', day: 'numeric', month: 'short' };
 const getDateFormatter = () => new Intl.DateTimeFormat(getLocale(), dateFormatOptions);
