@@ -2,6 +2,8 @@ body {
     /* prevent scrolling */
     height: 100%;
     overflow: hidden;
+
+    background-image: url('../../public/wallpaper-light.jpg');
 }
 
 .menu-bar {
