@@ -5,5 +5,7 @@
  * @returns {React.JSX}
  */
 export default function ApplicationMenu() {
-    return <></>;
+    return (
+        <div className="application-menu"></div>
+    );
 }
