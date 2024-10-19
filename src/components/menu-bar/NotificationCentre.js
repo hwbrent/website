@@ -78,7 +78,7 @@ const updateEverySecond = (setDateTime) => {
  * @description An example is "Sat 19 Oct 21:18"
  * @returns {React.JSX.Element}
  */
-export default function DateAndTime() {
+export default function NotificationCentre() {
     // the string that will be shown to the user in the widget
     const [ dateTime, setDateTime ] = useState('');
 

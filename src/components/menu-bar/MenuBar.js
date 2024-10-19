@@ -1,11 +1,11 @@
 import ApplicationMenu from './ApplicationMenu';
-import DateAndTime from './DateAndTime';
+import NotificationCentre from './NotificationCentre';
 
 export default function MenuBar() {
     return (
         <div className="menu-bar">
             <ApplicationMenu />
-            <DateAndTime />
+            <NotificationCentre />
         </div>
     );
 };
