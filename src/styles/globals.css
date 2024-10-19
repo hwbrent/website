@@ -6,4 +6,10 @@ body {
 
 .menu-bar {
     width: 100%;
+
+    /*
+    people here are saying the height of the menu bar is a static 22 pixels:
+    https://stackoverflow.com/q/2867503
+    */
+    height: 22px;
 }
