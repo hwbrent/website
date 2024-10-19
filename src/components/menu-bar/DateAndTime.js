@@ -12,7 +12,11 @@ const dateFormatOptions = { weekday: 'short', day: 'numeric', month: 'short' };
 const getDateFormatter = () => new Intl.DateTimeFormat(getLocale(), dateFormatOptions);
 const formatDate = (date) => getDateFormatter().format(date);
 
-const timeFormatOptions = { hour: '2-digit', minute: '2-digit' };
+const timeFormatOptions = {
+    hour: '2-digit',
+    minute: '2-digit',
+    hourCycle: 'h23' // specifies 24-hour format, i.e 22:00 rather than 10:00PM
+};
 const getTimeFormatter = () => new Intl.DateTimeFormat(getLocale(), timeFormatOptions);
 const formatTime = (date) => getTimeFormatter().format(date);
 
