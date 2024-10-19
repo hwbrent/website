@@ -1,4 +1,4 @@
-import MenuBar from '../app/menu-bar/MenuBar.js';
+import MenuBar from '../components/menu-bar/MenuBar.js';
 
 const id = 'root';
 
