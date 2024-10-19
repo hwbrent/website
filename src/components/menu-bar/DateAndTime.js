@@ -1,18 +1,34 @@
 import { useState, useEffect } from "react";
 
 /**
- * @summary Gets a new `Date` object
- * @returns {Date}
+ * @returns {string} The language configured in the browser settings.
+ * @see {@link https://developer.mozilla.org/en-US/docs/Web/API/Navigator/language}
+ * @example
+ * console.log(getLocale()); // "en-US"
  */
-const getDate = () => new Date();
+const getLocale = () => window?.navigator?.language || 'en-US';
 
-/**
- * @summary Custom hook to execute `callback` whenever the time changes
- * @param {Function} callback - a function to be called when the date or time changes
- * @param {Date} dateObj - the value to be monitored
- * @returns {void}
- */
-const onDateTimeChange = (callback, dateObj) => useEffect(callback, [dateObj]);
+const dateFormatOptions = { weekday: 'short', day: 'numeric', month: 'short' };
+const getDateFormatter = () => new Intl.DateTimeFormat(getLocale(), dateFormatOptions);
+const formatDate = (date) => getDateFormatter().format(date);
+
+const timeFormatOptions = { hour: '2-digit', minute: '2-digit' };
+const getTimeFormatter = () => new Intl.DateTimeFormat(getLocale(), timeFormatOptions);
+const formatTime = (date) => getTimeFormatter().format(date);
+
+const getDateTimeString = (setter) => {
+    // get the current date
+    const now = new Date();
+
+    // get and format the date like in macOS
+    const date = formatDate(now); // e.g. 'Sat 19 Oct'
+    
+    // get and format the time like in macOS
+    const time = formatTime(now); // e.g. '21:39'
+
+    const string = date + ' ' + time; // e.g. 'Sat 19 Oct 21:39'
+    return string;
+};
 
 /**
  * @summary Represents the widget on the far right of the menu bar which shows the
@@ -22,21 +38,16 @@ const onDateTimeChange = (callback, dateObj) => useEffect(callback, [dateObj]);
  */
 export default function DateAndTime() {
 
-    const [ date, setDate ] = useState(getDate());
+    const initialDateTime = getDateTimeString();
+    const [ dateTime, setDateTime ] = useState(initialDateTime);
 
-    // update the tracked date/time every second
-    const updateDate = () => setDate(getDate());
-    setInterval(updateDate, 1000);
-
-    // when the date object updates, update the string representation of it.
-    const formatDate = () => {
-        console.log('formatDate');
-    };
-    onDateTimeChange(formatDate, date);
-
-    console.log(date);
+    // update the shown date/time every second
+    const updateDateTime = () => setDateTime(getDateTimeString());
+    setInterval(updateDateTime, 1000);
 
     return (
-        <div className="date-and-time"></div>
+        <div className="date-and-time">
+            {dateTime}
+        </div>
     );
 };
