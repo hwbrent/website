@@ -13,3 +13,8 @@ body {
     */
     height: 22px;
 }
+
+.date-and-time {
+    /* Align on far right of menu bar */
+    float: right;
+}
