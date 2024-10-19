@@ -8,10 +8,12 @@ import { useState, useEffect } from "react";
  */
 const getLocale = () => global?.navigator?.language || 'en-US';
 
+// these three things are related to formatting a date to appear like in macOS
 const dateFormatOptions = { weekday: 'short', day: 'numeric', month: 'short' };
 const getDateFormatter = () => new Intl.DateTimeFormat(getLocale(), dateFormatOptions);
 const formatDate = (date) => getDateFormatter().format(date);
 
+// these three things are related to formatting time to appear like in macOS
 const timeFormatOptions = {
     hour: '2-digit',
     minute: '2-digit',
