@@ -3,3 +3,7 @@ body {
     height: 100%;
     overflow: hidden;
 }
+
+.menu-bar {
+    width: 100%;
+}
