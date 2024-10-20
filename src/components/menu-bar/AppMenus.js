@@ -12,10 +12,40 @@ const menuNames = [
     'Help',
 ];
 
+// whether or not we should be highlighting the menus when the mouse is over them
+let highlightMode = false;
+
+const onClick = () => {
+    // toggle the highlight mode on/off
+    highlightMode = !highlightMode
+};
+
+const onMouseEvent = (event) => {
+    // if we're not in the highlight mode, don't do anything
+    if (!highlightMode) {
+        return;
+    }
+
+    const { target } = event;
+
+    // if it's mouseenter,    add the class.
+    // if it's mouseleave, remove the class
+    const action = event.type === 'mouseenter'
+        ? 'add'
+        : 'remove';
+
+    target.classList[action]('highlighted');
+};
+
 const getMenu = (name, key) => (
     <>
         <div key={`${key} sep`}></div>
-        <div key={key}>
+        <div
+            key={key}
+            onClick={onClick}
+            onMouseEnter={onMouseEvent}
+            onMouseLeave={onMouseEvent}
+        >
             {name}
         </div>
     </>
