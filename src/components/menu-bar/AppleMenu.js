@@ -1,8 +1,10 @@
+import { useState } from 'react';
 import Image from 'next/image';
 
 import appleLogoDark from 'public/apple-logo-dark.svg';
 
 const { src, height, width } = appleLogoDark;
+const defaultProps = { src, height, width, alt: "Apple Logo" };
 
 const fromPx = (value) => parseFloat(value);
 const toPx = (value) => `${value}px`;
@@ -14,10 +16,6 @@ const toPx = (value) => `${value}px`;
  * @returns {React.JSX}
  */
 export default function AppleMenu() {
-    return <Image
-        src={appleLogoDark.src}
-        alt="Apple Logo"
-        width='24'
-        height='24'
-    />;
+    const [ props, getProps ] = useState(defaultProps);
+    return <Image {...props} />;
 };
