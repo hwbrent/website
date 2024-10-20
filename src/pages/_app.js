@@ -1,5 +1,5 @@
 import MenuBar from '../components/menu-bar/MenuBar';
-import '../styles/globals.css';
+import '../styles/globals.scss';
 
 const rootId = 'root';
 
