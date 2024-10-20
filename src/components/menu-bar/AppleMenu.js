@@ -2,6 +2,11 @@ import Image from 'next/image';
 
 import appleLogoDark from 'public/apple-logo-dark.svg';
 
+const { src, height, width } = appleLogoDark;
+
+const fromPx = (value) => parseFloat(value);
+const toPx = (value) => `${value}px`;
+
 /**
  * @summary The little Apple logo on the far left of the menu bar
  * @description Name comes from here:
