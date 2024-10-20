@@ -1,5 +1,18 @@
+import Image from 'next/image'
+import appleLogoDark from 'public/apple-logo-dark.svg';
+
+const getAppleLogo = () => {
+    return <Image
+        src={appleLogoDark.src}
+        alt="Apple Logo"
+        width='24'
+        height='24'
+    />;
+};
+
 // the various menu items that you see when VSCode is open
-const menuNames = [
+const menus = [
+    getAppleLogo(),
     'Code',
     'File',
     'Edit',
@@ -82,6 +95,8 @@ function Menu(...props) {
     );
 }
 
+const renderMenus = () => menus.map(Menu);
+
 /**
  * @summary The left side of the menu bar, with the buttons like 'File', 'Edit', etc.
  * @description In macOS it's specific to the active application. It includes various
@@ -89,10 +104,9 @@ function Menu(...props) {
  * @returns {React.JSX}
  */
 export default function AppMenus() {
-    const menus = menuNames.map(Menu);
     return (
         <div className="app-menus">
-            {menus}
+            {renderMenus()}
         </div>
     );
 }
