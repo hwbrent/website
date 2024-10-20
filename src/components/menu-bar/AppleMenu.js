@@ -16,6 +16,6 @@ const toPx = (value) => `${value}px`;
  * @returns {React.JSX}
  */
 export default function AppleMenu() {
-    const [ props, getProps ] = useState(defaultProps);
+    const [ props, setProps ] = useState(defaultProps);
     return <Image {...props} />;
 };
