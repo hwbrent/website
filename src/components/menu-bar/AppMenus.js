@@ -1,18 +1,5 @@
-import Image from 'next/image'
-import appleLogoDark from 'public/apple-logo-dark.svg';
-
-const getAppleLogo = () => {
-    return <Image
-        src={appleLogoDark.src}
-        alt="Apple Logo"
-        width='24'
-        height='24'
-    />;
-};
-
 // the various menu items that you see when VSCode is open
 const menus = [
-    getAppleLogo(),
     'Code',
     'File',
     'Edit',
@@ -71,7 +58,7 @@ function Menu(...props) {
 
     // if it's the second menu (i.e. the first with text), make the text bold
     let className = "menu";
-    if (index === 1) {
+    if (index === 0) {
         className += ' bold'
     }
 
