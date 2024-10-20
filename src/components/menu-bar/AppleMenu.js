@@ -5,8 +5,7 @@ import Image from 'next/image';
 
 import appleLogoDark from 'public/apple-logo-dark.svg';
 
-const { src, height, width } = appleLogoDark;
-const defaultProps = { src, height, width, alt: "Apple Logo" };
+const defaultDims = [ appleLogoDark.width, appleLogoDark.height ];
 
 // weirdly, calling parseFloat on a string like '16px' is able to get the numeric
 // value fine.
@@ -17,26 +16,27 @@ const fromPx = parseFloat;
 /**
  * @summary Calculates the correct height and width for {@link Image} such that
  *          it is the same size as the menu bar text
- * @returns {object} the adjusted props for {@link Image}
+ * @returns {Array<number, number>} the adjusted width and height for {@link Image}
  */
 function scaleDims() {
-    // the raw value is a string with 'px' in it, so we need to convert that
-    const textSize = fromPx(global.getComputedStyle(document.body).fontSize);
+    // the default values for the width and height
+    const dims = [ ...defaultDims];
+    const [ width, height ] = dims;
 
     // which dimension is bigger vs smaller between height and width
-    const bigger =  height > width ? 'height' : 'width';
-    const smaller = height > width ? 'width'  : 'height';
+    const bigger =  height > width ? 1 : 0;
+    const smaller = height > width ? 0 : 1;
 
-    const props = { ...defaultProps };
+    // get amount by which to scale the smaller dimension down by.
+    // the raw font size is a string with 'px' in it, so we need to convert that
+    const textSize = fromPx(global.getComputedStyle(document.body).fontSize);
+    const factor = dims[bigger] / textSize;
 
-    // get amount by which to scale the smaller dimension down by
-    const factor = props[bigger] / textSize;
+    // adjust the dimensions in-place
+    dims[bigger]  /= factor; // should now be equal to the text size
+    dims[smaller] /= factor; // will now be less than or equal to the text size
 
-    // adjust the dimensions
-    props[bigger]  /= factor; // should now be equal to the text size
-    props[smaller] /= factor; // will now be less than or equal to the text size
-
-    return props;
+    return dims;
 };
 
 /**
@@ -46,15 +46,22 @@ function scaleDims() {
  * @returns {React.JSX}
  */
 export default function AppleMenu() {
-    const [ props, setProps ] = useState(defaultProps);
+    const [ dims, setDims ] = useState(defaultDims);
+    const [ width, height ] = dims;
+    const { src } = appleLogoDark;
 
     // scale the image down
-    const scale = () => setProps(scaleDims());
+    const scale = () => setDims(scaleDims());
     onMount(scale);
 
     return (
         <div className='apple-menu'>
-            <Image {...props} />
+            <Image
+                src={src}
+                alt='Apple Menu'
+                width={width}
+                height={height}
+            />
         </div>
     );
 };
