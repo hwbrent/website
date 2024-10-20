@@ -1,4 +1,3 @@
-import React from 'react';
 import Image from 'next/image';
 
 import appleLogoDark from 'public/apple-logo-dark.svg';
