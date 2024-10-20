@@ -13,6 +13,32 @@ let highlightMode = false;
 const onClick = () => {
     // toggle the highlight mode on/off
     highlightMode = !highlightMode
+
+    // if highlight mode was just turned off, don't do anything
+    if (!highlightMode) {
+        return;
+    }
+
+    const callback = (event) => {
+        // stop 'onClick' getting called again if we click again on a menu
+        event.stopPropagation();
+
+        highlightMode = false;
+
+        // had to add in Array.From because there was some weird behaviour without it.
+        // basically there are always five elements to un-highlight, but only three
+        // were being dealt with properly. i guess it's because 'highlighted' is a live
+        // list of nodes, so when you remove the class from the first element, the list
+        // length decreases by one, and then we move onto the next element, effectively
+        // skipping the element which was second in the original list of five and
+        // moving onto the third
+        const highlighted = Array.from(document.getElementsByClassName('highlighted'));
+        for (const element of highlighted) {
+            element.classList.remove('highlighted');
+        }
+    };
+    const addListener = () => document.body.addEventListener('click', callback, { capture: true, once: true });
+    setTimeout(addListener);
 };
 
 const onMouseEvent = (event) => {
