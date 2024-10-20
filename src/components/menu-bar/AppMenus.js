@@ -35,10 +35,7 @@ const onMouseEvent = (event) => {
         : 'remove';
 
     // helper to call either classList.add or classList.remove
-    const action = (el) => {
-        const method = el.classList[methodName];
-        method('highlighted');
-    }
+    const action = (el) => el.classList[methodName]('highlighted');
 
     action(prev1);
     action(prev2);
