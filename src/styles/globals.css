@@ -29,7 +29,10 @@ body {
 .app-menus {
     display: flex;
     justify-content: flex-start; /* Pack on left side */
-    gap: 12px; /* trial and error. just felt right */
+}
+
+.app-menus .gap {
+    width: 4px;
 }
 
 /* Make the first menu have bold text */

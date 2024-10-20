@@ -37,20 +37,44 @@ const onMouseEvent = (event) => {
     target.classList[action]('highlighted');
 };
 
-const getMenu = (name, key) => (
-    <>
-        <div key={`${key} sep`}></div>
+/**
+ * @summary Represents a single menu item in the App Menus section of the menu bar.
+ * @param  {...any} props - the first is the text to be shown in the menu, and the second
+ *                          is the index of the menu in the overall App Menus list
+ * @returns {React.JSX}
+ */
+function Menu(...props) {
+    const [ name, index ] = props;
+
+    // basically we want to have three evenly-spaced gaps either side of the menu's
+    // text to make it easier to highlight. the way that the menus highlight in macos
+    // is weird. it's not like the highlight colour extends to halfway between the
+    // text of two menus - the highlighted menu's highlight colour will extend past
+    // that point. this is the best way i could think to achieve this effect.
+    // basically it's just a case of highlighting the actual menu, then highlighting
+    // the two gaps either side of the menu itself
+    const gap = <div className="gap" />;
+    const gaps = <>{gap}{gap}{gap}</>; // three individual gaps together
+
+    const menu = (
         <div
-            key={key}
-            onClick={onClick}
+            className="menu"
             onMouseEnter={onMouseEvent}
             onMouseLeave={onMouseEvent}
+            onClick={onClick}
         >
             {name}
         </div>
-    </>
-);
-const getMenus = () => menuNames.map(getMenu);
+    );
+
+    return (
+        <>
+            { index === 0 ? gaps : null }
+            {menu}
+            {gaps}
+        </>
+    );
+}
 
 /**
  * @summary The left side of the menu bar, with the buttons like 'File', 'Edit', etc.
@@ -59,9 +83,10 @@ const getMenus = () => menuNames.map(getMenu);
  * @returns {React.JSX}
  */
 export default function AppMenus() {
+    const menus = menuNames.map(Menu);
     return (
         <div className="app-menus">
-            {getMenus()}
+            {menus}
         </div>
     );
 }
