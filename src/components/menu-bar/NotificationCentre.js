@@ -1,4 +1,5 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
+import { useDoEverySecond } from "@/utils/utils";
 
 /**
  * @returns {string} The language configured in the browser settings.
@@ -45,34 +46,6 @@ const getDateTimeString = () => {
 };
 
 /**
- * @summary Updates the shown date/time every second
- * @param {function} setDateTime - the React useState setter function for the
- *                                 date/time string
- * @returns {void}
- */
-const useUpdateEverySecond = (setDateTime) => {
-    // run this stuff after the component is mounted in the page
-    const callback = () => {
-        // pass the formatted string to setDateTime
-        const updateDateTimeString = () => setDateTime(getDateTimeString());
-
-        // update straight away so that we don't have a situation where the widget
-        // is empty for the first second that the page is loaded
-        updateDateTimeString();
-
-        // call 'updateDateTimeString' every second
-        const second = 1000;
-        const id = setInterval(updateDateTimeString, second);
-
-        // Cleanup function - clear interval when component unmounts
-        const cleanup = () => clearInterval(id)
-        return cleanup;
-    };
-
-    return useEffect(callback, []);
-};
-
-/**
  * @summary Represents the widget on the far right of the menu bar which shows the
  * date and time.
  * @description An example is "Sat 19 Oct 21:18"
@@ -82,7 +55,8 @@ export default function NotificationCentre() {
     // the string that will be shown to the user in the widget
     const [ dateTime, setDateTime ] = useState('');
 
-    useUpdateEverySecond(setDateTime);
+    const updateDateTimeString = () => setDateTime(getDateTimeString());
+    useDoEverySecond(updateDateTimeString);
 
     return (
         <div className="notification-centre">

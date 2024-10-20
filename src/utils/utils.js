@@ -6,3 +6,13 @@ import { useEffect } from "react";
  * @returns {void}
  */
 export const useOnMount = (callback) => useEffect(callback, []);
+
+/**
+ * @summary Custom hook to do something every second
+ * @param {function} setDateTime - the function to be called every second
+ * @returns {void}
+ */
+export const useDoEverySecond = (callback) => useEffect(() => {
+    const id = setInterval(callback, 1000);
+    return () => clearInterval(id);
+}, []);
