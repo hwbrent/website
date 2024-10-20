@@ -4,7 +4,7 @@ import NotificationCentre from './NotificationCentre';
 
 import appleLogoDark from 'public/apple-logo-dark.svg';
 
-const AppleLogo = () => {
+function AppleLogo() {
     return <Image
         src={appleLogoDark.src}
         alt="Apple Logo"
