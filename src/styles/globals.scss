@@ -2,6 +2,7 @@ body {
     // prevent scrolling
     height: 100vh; // fill entire screen
     overflow: hidden;
+    margin: 0; // for some reason there was a random margin around the whole body
 
     // apple font
     font-family: -apple-system, BlinkMacSystemFont, sans-serif;
@@ -21,6 +22,12 @@ body {
 
     .menu-bar {
         width: 100%;
+
+        // stop menu bar contents from being right up against left/right of screen
+        padding-left: 15px;
+        padding-right: 15px;
+        box-sizing: border-box; // ensures width stays at 100% w/o padding pushing
+                                // content out of view
 
         // people here are saying the height of the menu bar is a static 22 pixels:
         // https://stackoverflow.com/q/2867503
