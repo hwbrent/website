@@ -50,9 +50,9 @@ const onMouseEvent = (event) => {
     // get the clicked menu and the two gaps either side of it
     const { target } = event;
     const prev1 = target.previousElementSibling;
-    const prev2 = prev1.previousElementSibling;
+    const prev2 = prev1.previousElementSibling; // furthest left gap
     const next1 = target.nextElementSibling;
-    const next2 = next1.nextElementSibling;
+    const next2 = next1.nextElementSibling; // furthest right gap
 
     // if it's mouseenter,    add the class.
     // if it's mouseleave, remove the class
@@ -61,13 +61,21 @@ const onMouseEvent = (event) => {
         : 'remove';
 
     // helper to call either classList.add or classList.remove
-    const action = (el) => el.classList[methodName]('highlighted');
+    const action = (el, otherClass = null) => {
+        const classes = el.classList;
+        const method = classes[methodName].bind(classes)
+        method('highlighted')
 
+        if (otherClass) {
+            method(otherClass);
+        }
+    };
+
+    action(prev2, 'left'); // furthest left
     action(prev1);
-    action(prev2);
     action(target);
     action(next1);
-    action(next2);
+    action(next2, 'right'); // furthest right
 };
 
 /**

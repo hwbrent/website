@@ -42,6 +42,15 @@ body {
 
             .gap {
                 width: 4px;
+
+                .left {
+                    border-top-left-radius: 20px;
+                    border-bottom-left-radius: 20px;
+                }
+                .right {
+                    border-top-right-radius: 20px;
+                    border-bottom-right-radius: 20px;
+                }
             }
         }
 
