@@ -24,10 +24,13 @@ body {
     background-color: rgba(255, 255, 255, 0.2); /* slight translucent color */
     border: 1px solid rgba(255, 255, 255, 0.3); /* subtle border */
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* shadow */
+
+    display: flex;
+    align-items: center; /* in the centre vertically */
 }
 
 .app-menus {
-    display: flex;
+    display: inherit;
     justify-content: flex-start; /* Pack on left side */
 }
 
@@ -36,8 +39,7 @@ body {
 }
 
 .notification-centre {
-    /* Align on far right of menu bar */
-    float: right;
+    margin-left: auto; /* Align on far right of menu bar */
 }
 
 .bold {
