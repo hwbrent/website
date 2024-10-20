@@ -50,7 +50,7 @@ const getDateTimeString = () => {
  *                                 date/time string
  * @returns {void}
  */
-const updateEverySecond = (setDateTime) => {
+const useUpdateEverySecond = (setDateTime) => {
     // run this stuff after the component is mounted in the page
     const callback = () => {
         // pass the formatted string to setDateTime
@@ -82,7 +82,7 @@ export default function NotificationCentre() {
     // the string that will be shown to the user in the widget
     const [ dateTime, setDateTime ] = useState('');
 
-    updateEverySecond(setDateTime);
+    useUpdateEverySecond(setDateTime);
 
     return (
         <div className="notification-centre">
