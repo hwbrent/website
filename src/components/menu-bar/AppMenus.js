@@ -10,7 +10,7 @@ const exampleMenus = {
 // whether or not we should be highlighting the menus when the mouse is over them
 let highlightMode = false;
 
-const onClick = () => {
+const onClick = (event1) => {
     // toggle the highlight mode on/off
     highlightMode = !highlightMode
 
@@ -19,9 +19,13 @@ const onClick = () => {
         return;
     }
 
-    const callback = (event) => {
+    // make the highlighting start on the just-clicked menu
+    event1.type = 'mouseenter'; // spoof it to cause the classes to get added
+    onMouseEvent(event1);
+
+    const callback = (event2) => {
         // stop 'onClick' getting called again if we click again on a menu
-        event.stopPropagation();
+        event2.stopPropagation();
 
         highlightMode = false;
 
