@@ -70,4 +70,14 @@ body {
             margin-left: auto; // Align on far right of menu bar
         }
     }
+
+    .dock {
+        // place at bottom of screen
+        position: fixed;
+        bottom: 0;
+
+        // place in centre (i.e. equidistant from left and right)
+        left: 50%;
+        transform: translateX(-50%); // offset by 1/2 width to stay centred vertically
+    }
 }
