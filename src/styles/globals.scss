@@ -6,8 +6,13 @@ body {
     // apple font
     font-family: -apple-system, BlinkMacSystemFont, sans-serif;
 
+    // add a background image
     // source: https://512pixels.net/projects/default-mac-wallpapers-in-5k/#gallery-6
+    // centre and scale the image nicely
     background-image: url('../../public/wallpaper-light.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 
     // misc helper style
     .bold {
