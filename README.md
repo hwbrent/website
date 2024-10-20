@@ -6,4 +6,5 @@ Nomenclature originates from here: https://support.apple.com/en-gb/guide/mac-hel
 
 ## To do:
 
-- [] Enable click/highlight behaviour on Apple Menu
+##### Menu bar
+- [ ] Enable click/highlight behaviour on Apple Menu
