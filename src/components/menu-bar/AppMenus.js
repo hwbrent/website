@@ -10,6 +10,37 @@ const exampleMenus = {
 // whether or not we should be highlighting the menus when the mouse is over them
 let highlightMode = false;
 
+/**
+ * @summary Handles the (un)highlighting of a menu
+ * @param {Element} element - the menu to apply highlighting to
+ * @param {string} methodName - whether to `'add'` or `'remove'` the highlighting
+ */
+function handleHighlight(element, methodName) {
+    // get the gaps either side of the menu
+    const prev1 = element.previousElementSibling;
+    const prev2 = prev1.previousElementSibling; // furthest left gap
+    const next1 = element.nextElementSibling;
+    const next2 = next1.nextElementSibling; // furthest right gap
+
+    // helper to call either classList.add or classList.remove
+    const action = (el, otherClass = null) => {
+        const classes = el.classList;
+        const method = classes[methodName].bind(classes)
+        method('highlighted')
+
+        if (otherClass) {
+            method(otherClass);
+        }
+    };
+
+    // carry out operation on menu and eligible gaps
+    action(prev2, 'left'); // furthest left
+    action(prev1);
+    action(element);
+    action(next1);
+    action(next2, 'right'); // furthest right
+}
+
 const onClick = (event1) => {
     // toggle the highlight mode on/off
     highlightMode = !highlightMode
@@ -20,8 +51,7 @@ const onClick = (event1) => {
     }
 
     // make the highlighting start on the just-clicked menu
-    event1.type = 'mouseenter'; // spoof it to cause the classes to get added
-    onMouseEvent(event1);
+    handleHighlight(event1.target, 'add');
 
     const callback = (event2) => {
         // stop 'onClick' getting called again if we click again on a menu
@@ -51,35 +81,13 @@ const onMouseEvent = (event) => {
         return;
     }
 
-    // get the clicked menu and the two gaps either side of it
-    const { target } = event;
-    const prev1 = target.previousElementSibling;
-    const prev2 = prev1.previousElementSibling; // furthest left gap
-    const next1 = target.nextElementSibling;
-    const next2 = next1.nextElementSibling; // furthest right gap
+    const { type, target } = event;
 
-    // if it's mouseenter,    add the class.
-    // if it's mouseleave, remove the class
-    const methodName = event.type === 'mouseenter'
+    const methodName = type === 'mouseenter'
         ? 'add'
         : 'remove';
 
-    // helper to call either classList.add or classList.remove
-    const action = (el, otherClass = null) => {
-        const classes = el.classList;
-        const method = classes[methodName].bind(classes)
-        method('highlighted')
-
-        if (otherClass) {
-            method(otherClass);
-        }
-    };
-
-    action(prev2, 'left'); // furthest left
-    action(prev1);
-    action(target);
-    action(next1);
-    action(next2, 'right'); // furthest right
+    handleHighlight(target, methodName);
 };
 
 /**
