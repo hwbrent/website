@@ -1,22 +1,11 @@
-import Image from 'next/image';
+import AppleMenu from './AppleMenu';
 import AppMenus from './AppMenus';
 import NotificationCentre from './NotificationCentre';
-
-import appleLogoDark from 'public/apple-logo-dark.svg';
-
-function AppleLogo() {
-    return <Image
-        src={appleLogoDark.src}
-        alt="Apple Logo"
-        width='24'
-        height='24'
-    />;
-};
 
 export default function MenuBar() {
     return (
         <div className="menu-bar">
-            <AppleLogo />
+            <AppleMenu />
             <AppMenus />
             <NotificationCentre />
         </div>
