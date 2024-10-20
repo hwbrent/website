@@ -35,12 +35,11 @@ body {
     width: 4px;
 }
 
-/* Make the first menu have bold text */
-.app-menus div:nth-child(2) {
-    font-weight: bold;
-}
-
 .notification-centre {
     /* Align on far right of menu bar */
     float: right;
+}
+
+.bold {
+    font-weight: bold;
 }

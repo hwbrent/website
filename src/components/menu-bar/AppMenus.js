@@ -56,9 +56,15 @@ function Menu(...props) {
     const gap = <div className="gap" />;
     const gaps = <>{gap}{gap}{gap}</>; // three individual gaps together
 
+    // if it's the second menu (i.e. the first with text), make the text bold
+    let className = "menu";
+    if (index === 1) {
+        className += ' bold'
+    }
+
     const menu = (
         <div
-            className="menu"
+            className={className}
             onMouseEnter={onMouseEvent}
             onMouseLeave={onMouseEvent}
             onClick={onClick}
