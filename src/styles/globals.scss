@@ -34,6 +34,10 @@ body {
             display: inherit;
             justify-content: flex-start; // Pack on left side
 
+            .highlighted {
+                background: rgba(white, 0.5); // make background lighter
+            }
+
             .gap {
                 width: 4px;
             }
