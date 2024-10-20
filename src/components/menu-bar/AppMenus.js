@@ -1,16 +1,11 @@
-// the various menu items that you see when VSCode is open
-const menus = [
-    'Code',
-    'File',
-    'Edit',
-    'Selection',
-    'View',
-    'Go',
-    'Run',
-    'Terminal',
-    'Window',
-    'Help',
-];
+const exampleMenus = {
+    'Finder': [
+        'Finder', 'File', 'Edit', 'View', 'Go', 'Window', 'Help'
+    ],
+    'VSCode': [
+        'Code', 'File', 'Edit', 'Selection', 'View', 'Go', 'Run', 'Terminal', 'Window', 'Help'
+    ]
+};
 
 // whether or not we should be highlighting the menus when the mouse is over them
 let highlightMode = false;
@@ -82,6 +77,8 @@ function Menu(...props) {
     );
 }
 
+// show the finder menus by default
+const menus = exampleMenus['Finder'];
 const renderMenus = () => menus.map(Menu);
 
 /**
