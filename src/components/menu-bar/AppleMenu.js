@@ -6,7 +6,7 @@ import Image from 'next/image';
 import appleLogoDark from 'public/apple-logo-dark.svg';
 
 const { src, height, width } = appleLogoDark;
-const defaultProps = { src, height, width, alt: "Apple Logo", className: 'apple-menu' };
+const defaultProps = { src, height, width, alt: "Apple Logo" };
 
 // weirdly, calling parseFloat on a string like '16px' is able to get the numeric
 // value fine.
@@ -52,5 +52,9 @@ export default function AppleMenu() {
     const scale = () => setProps(scaleDims());
     onMount(scale);
 
-    return <Image {...props} />;
+    return (
+        <div className='apple-menu'>
+            <Image {...props} />
+        </div>
+    );
 };
