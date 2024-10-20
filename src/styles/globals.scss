@@ -1,39 +1,38 @@
 body {
-    /* prevent scrolling */
+    // prevent scrolling
     height: 100%;
     overflow: hidden;
 
-    /* apple font */
+    // apple font
     font-family: -apple-system, BlinkMacSystemFont, sans-serif;
 
-    /* source: https://512pixels.net/projects/default-mac-wallpapers-in-5k/#gallery-6 */
+    // source: https://512pixels.net/projects/default-mac-wallpapers-in-5k/#gallery-6
     background-image: url('../../public/wallpaper-light.jpg');
 
+    // misc helper style
     .bold {
         font-weight: bold;
     }
 
     .menu-bar {
         width: 100%;
-    
-        /*
-        people here are saying the height of the menu bar is a static 22 pixels:
-        https://stackoverflow.com/q/2867503
-        */
+
+        // people here are saying the height of the menu bar is a static 22 pixels:
+        // https://stackoverflow.com/q/2867503
         height: 22px;
-    
-        /* make it a bit blurred, and give it a bit of an outline */
-        backdrop-filter: blur(10px); /* Apply blur */
-        background-color: rgba(255, 255, 255, 0.2); /* slight translucent color */
-        border: 1px solid rgba(255, 255, 255, 0.3); /* subtle border */
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* shadow */
+
+        // make it a bit blurred, and give it a bit of an outline
+        backdrop-filter: blur(10px); // Apply blur
+        background-color: rgba(255, 255, 255, 0.2); // slight translucent color
+        border: 1px solid rgba(255, 255, 255, 0.3); // subtle border
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); // shadow
 
         display: flex;
-        align-items: center; /* in the centre vertically */
+        align-items: center; // in the centre vertically
 
         .app-menus {
             display: inherit;
-            justify-content: flex-start; /* Pack on left side */
+            justify-content: flex-start; // Pack on left side
 
             .gap {
                 width: 4px;
@@ -41,9 +40,8 @@ body {
         }
 
         .notification-centre {
-            margin-left: auto; /* Align on far right of menu bar */
+            margin-left: auto; // Align on far right of menu bar
         }
-        
     }
 }
 
