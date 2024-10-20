@@ -5,4 +5,4 @@ import { useEffect } from "react";
  * @param {function} callback - the func to be called when the component is mounted
  * @returns {void}
  */
-export const useOnMount = (callback) => useEffect(callback, []);
+export const onMount = (callback) => useEffect(callback, []);

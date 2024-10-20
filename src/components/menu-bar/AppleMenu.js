@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { useOnMount } from '@/utils/utils';
+import { onMount } from '@/utils/utils';
 
 import Image from 'next/image';
 
@@ -50,7 +50,7 @@ export default function AppleMenu() {
 
     // scale the image down
     const scale = () => setProps(scaleDims());
-    useOnMount(scale);
+    onMount(scale);
 
     return <Image {...props} />;
 };
