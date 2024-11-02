@@ -105,6 +105,10 @@ body {
 
         // Add a gap between the items. Trial and error again. Seems close
         column-gap: 14px;
+
+        // scale everything down in size; with all the default dock icons, at normal size,
+        // the dock is way too long, so everything goes off the screen
+        transform: scale(0.75);
     }
 
     .tooltip {
