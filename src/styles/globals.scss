@@ -101,5 +101,8 @@ body {
 
         // make the contents appear in the centre (vertically)
         align-items: center;
+
+        // Add a gap between the items. Trial and error again. Seems close
+        gap: 14px;
     }
 }
