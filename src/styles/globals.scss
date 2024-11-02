@@ -76,7 +76,7 @@ body {
     .dock {
         // place at bottom of screen
         position: fixed;
-        bottom: 0;
+        bottom: 5px; // make it appear 5px off the bottom
 
         // place in centre (i.e. equidistant from left and right)
         left: 50%;
