@@ -10,14 +10,12 @@ const ICONS = [
     DownloadsPNG
 ];
 
-const getVarName = (variable) => Object.keys({variable})[0];
-
 const getIcons = () => ICONS.map((icon, key) => (
     <Image
         src={icon.src}
         width={16}
         height={16}
-        alt={getVarName(icon)}
+        alt={''}
         key={key}
     />
 ));
