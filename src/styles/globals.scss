@@ -110,6 +110,9 @@ body {
         // Allow the tooltip to be placed programmatically anywhere on the page
         position: fixed;
 
+        // Eyeballed this
+        height: 25px;
+
         // Add some padding between the edges of the tooltip and the text.
         // I just eyeballed the value
         padding-left: 12px;
