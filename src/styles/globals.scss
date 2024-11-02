@@ -90,6 +90,10 @@ body {
         // basically just tried random values until i got this. seems pretty spot on
         border-radius: 17px;
 
+        // add padding so contents aren't pushed right up to the curved corners
+        padding-left:  11px;
+        padding-right: 11px;
+
         display: flex;
         justify-content: center;
     }
