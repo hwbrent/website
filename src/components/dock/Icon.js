@@ -29,17 +29,28 @@ function initTooltip() {
 
 /**
  * @summary Shows the tooltip above the icon
+ * @param {string} iconName - The name of the icon, e.g. 'Launchpad'
  */
-function showTooltip() {
+function showTooltip(iconName) {
     if (!tooltip) {
         initTooltip();
     }
+
+    // Put the icon's name inside the <p>
+    const p = tooltip.firstElementChild;
+    p.textContent = iconName;
+
+    // Make the tooltip visible (this is the default 'display' value if you never set it)
+    tooltip.style.display = '';
 }
 
 /**
  * @summary Hides the tooltip
  */
-function hideTooltip() {}
+function hideTooltip() {
+    // Make the div invisible
+    tooltip.style.display = 'none';
+}
 
 /**
  * @summary An icon in the macOS dock
@@ -54,12 +65,15 @@ export default function Icon(png, key) {
     // Get the name of the file from the src
     const name = src.split('/').pop().split('.')[0];
 
+    const show = () => showTooltip(name);
+    const hide = () => hideTooltip(name);
+
     return (
         <div
             className    = 'icon'
             key          = {key}
-            onMouseEnter = {showTooltip}
-            onMouseLeave = {hideTooltip}
+            onMouseEnter = {show}
+            onMouseLeave = {hide}
         >
             <Image
                 src    = {src}
