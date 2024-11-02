@@ -15,6 +15,9 @@ body {
     // apple font
     font-family: -apple-system, BlinkMacSystemFont, sans-serif;
 
+    // Prevent text selection everywhere
+    user-select: none;
+
     // add a background image
     // source: https://512pixels.net/projects/default-mac-wallpapers-in-5k/#gallery-6
     // centre and scale the image nicely
@@ -40,8 +43,6 @@ body {
         // people here are saying the height of the menu bar is a static 22 pixels:
         // https://stackoverflow.com/q/2867503
         height: 22px;
-
-        user-select: none; // prevent text being selected/highlighted
 
         display: flex;
         align-items: center; // in the centre vertically
