@@ -96,5 +96,8 @@ body {
 
         display: flex;
         justify-content: center;
+
+        // make the contents appear in the centre (vertically)
+        align-items: center;
     }
 }
