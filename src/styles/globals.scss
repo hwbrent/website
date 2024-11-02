@@ -82,6 +82,9 @@ body {
         left: 50%;
         transform: translateX(-50%); // offset by 1/2 width to stay centred vertically
 
+        // This is just the height that the dock appears to be currently on my Mac
+        height: 64px;
+
         display: flex;
         justify-content: center;
     }
