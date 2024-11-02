@@ -27,10 +27,32 @@ import TVPNG        from 'public/dock-icons/TV.png';
 
 import Icon from './Icon';
 
+// the order here is as seen here:
+// https://help.apple.com/assets/65E218FE85FC4D5CE50E7794/65E2190393CE9DC994014CA3/en_GB/59f8a934c24d3ddbc7bcbce7764def94.png
 const ICONS = [
     FinderPNG,
     LaunchpadPNG,
-    DownloadsPNG
+    SafariPNG,
+    MessagesPNG,
+    MailPNG,
+    MapsPNG,
+    PhotosPNG,
+    FacetimePNG,
+    CalendarPNG,
+    ContactsPNG,
+    RemindersPNG,
+    NotesPNG,
+    FreeformPNG,
+    TVPNG,
+    MusicPNG,
+    NewsPNG,
+    KeynotePNG,
+    NumbersPNG,
+    PagesPNG,
+    AppStorePNG,
+    SettingsPNG,
+    DownloadsPNG,
+    TrashPNG
 ];
 
 const getIcons = () => ICONS.map(Icon);
