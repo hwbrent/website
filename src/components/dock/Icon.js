@@ -17,13 +17,12 @@ export default function Icon(png, key) {
     const name = src.split('/').pop().split('.')[0];
 
     return (
-        <div className='icon'>
+        <div className='icon' key={key}>
             <Image
                 src    = {src}
                 width  = {SIZE}
                 height = {SIZE}
                 alt    = {name}
-                key    = {key}
             />
         </div>
     );
