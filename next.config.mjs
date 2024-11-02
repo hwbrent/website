@@ -14,7 +14,16 @@ const nextConfig = {
     // favicon.ico file will be resolved to hwbrent.github.io/favicon.ico instead of
     // hwbrent.github.io/website/favicon.icon.
     // To fix this, we can set up a path prefix by adding basePath, like so:
-    basePath: "/website"
+    basePath: "/website",
+
+    // For the 'Image' component from 'next/image', the optimisation feature isn't
+    // compatible with the "output: 'export'"" setting, which is used for generating
+    // a static site. This happens because Next.js's default Image optimization relies
+    // on a server to handle requests, which isn't available in fully static exports.
+    // This property avoids an error
+    images: {
+        unoptimized: true
+    }
 };
 
 export default nextConfig;
