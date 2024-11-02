@@ -95,6 +95,8 @@ body {
         padding-right: 11px;
 
         display: flex;
+        flex-direction: row; // specify that we're aligning stuff in a row
+
         justify-content: center;
 
         // make the contents appear in the centre (vertically)
