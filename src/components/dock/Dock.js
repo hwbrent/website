@@ -5,9 +5,9 @@ import FinderPNG from 'public/dock-icons/Finder.png';
 import LaunchpadPNG from 'public/dock-icons/Launchpad.png';
 
 const ICONS = [
-    DownloadsPNG,
     FinderPNG,
-    LaunchpadPNG
+    LaunchpadPNG,
+    DownloadsPNG
 ];
 
 const getVarName = (variable) => Object.keys({variable})[0];
