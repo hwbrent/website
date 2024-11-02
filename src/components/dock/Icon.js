@@ -1,6 +1,7 @@
 import Image from 'next/image';
 
-const SIZE = 16;
+// Trial and error. Seems about right. Idk
+const SIZE = 52;
 
 /**
  * @summary An icon in the macOS dock
