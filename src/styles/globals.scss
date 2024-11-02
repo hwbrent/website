@@ -105,4 +105,9 @@ body {
         // Add a gap between the items. Trial and error again. Seems close
         column-gap: 14px;
     }
+
+    .tooltip {
+        // Allow the tooltip to be placed programmatically anywhere on the page
+        position: fixed;
+    }
 }
