@@ -10,13 +10,19 @@ const SIZE = 52;
  * @returns {React.JSX}
  */
 export default function Icon(png, key) {
+    // e.g. '/website/_next/static/media/Downloads.55f91097.png'
+    const { src } = png;
+
+    // Get the name of the file from the src
+    const name = src.split('/').pop().split('.')[0];
+
     return (
         <div className='icon'>
             <Image
-                src    = {png.src}
+                src    = {src}
                 width  = {SIZE}
                 height = {SIZE}
-                alt    = {''}
+                alt    = {name}
                 key    = {key}
             />
         </div>
