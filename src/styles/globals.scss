@@ -110,6 +110,10 @@ body {
         // Allow the tooltip to be placed programmatically anywhere on the page
         position: fixed;
 
+        // Align the text in the centre of the tooltip
+        display: flex;
+        align-items: center;
+
         // Eyeballed this
         height: 25px;
 
