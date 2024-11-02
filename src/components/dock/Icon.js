@@ -21,10 +21,6 @@ function initTooltip() {
 
     // Add a class to allow styling
     tooltip.classList.add('tooltip');
-
-    // add a text element within it
-    const p = document.createElement('p');
-    tooltip.appendChild(p);
 }
 
 /**
@@ -38,9 +34,8 @@ function showTooltip(event, iconName) {
         initTooltip();
     }
 
-    // Put the icon's name inside the <p>
-    const p = tooltip.firstElementChild;
-    p.textContent = iconName;
+    // Put the icon's name inside the tooltip
+    tooltip.textContent = iconName;
 
     // Make the tooltip visible (this is the default 'display' value if you never set it)
     tooltip.style.display = '';
