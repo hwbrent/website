@@ -59,8 +59,10 @@ const getIcons = () => ICONS.map(Icon);
 
 export default function Dock() {
     return (
-        <div className="dock">
-            {getIcons()}
+        <div className='dock-wrapper'>
+            <div className="dock">
+                {getIcons()}
+            </div>
         </div>
     );
 }

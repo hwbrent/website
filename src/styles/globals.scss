@@ -74,7 +74,9 @@ body {
         }
     }
 
-    .dock {
+    // Need to wrap the dock in a wrapper, and apply the dock positioning to the wrapper,
+    // because otherwise, when we scale the dock, it messes up the positioning too
+    .dock-wrapper {
         // place at bottom of screen
         position: fixed;
         bottom: 5px; // make it appear 5px off the bottom
@@ -82,7 +84,9 @@ body {
         // place in centre (i.e. equidistant from left and right)
         left: 50%;
         transform: translateX(-50%); // offset by 1/2 width to stay centred vertically
+    }
 
+    .dock {
         // This is just the height that the dock appears to be currently on my Mac
         height: 64px;
         // width: 964px;
