@@ -84,6 +84,11 @@ body {
 
         // This is just the height that the dock appears to be currently on my Mac
         height: 64px;
+        // width: 964px;
+
+        // got this via trial and error. i set the width to be the same as my dock, and
+        // basically just tried random values until i got this. seems pretty spot on
+        border-radius: 17px;
 
         display: flex;
         justify-content: center;
