@@ -1,31 +1,31 @@
 import Image from 'next/image';
 
-const ICONS_BASE_PATH = '../../../public/dock-icons';
+import DownloadsPNG from 'public/dock-icons/Downloads.png';
+import FinderPNG from 'public/dock-icons/Finder.png';
+import LaunchpadPNG from 'public/dock-icons/Launchpad.png';
 
-const iconNames = [
-    'Downloads',
-    'Finder',
-    'Launchpad'
+const ICONS = [
+    DownloadsPNG,
+    FinderPNG,
+    LaunchpadPNG
 ];
 
+const getVarName = (variable) => Object.keys({variable})[0];
+
+const getIcons = () => ICONS.map((icon, key) => (
+    <Image
+        src={icon.src}
+        width={16}
+        height={16}
+        alt={getVarName(icon)}
+        key={key}
+    />
+));
+
 export default function Dock() {
-    const icons = iconNames.map((name, key) => {
-
-        const path = `${ICONS_BASE_PATH}/${name}.icns`;
-        const width = 16;
-        const height = 16;
-        return <Image
-            src={path}
-            width={width}
-            height={height}
-            alt={name}
-            key={key}
-        />;
-    });
-
     return (
         <div className="dock">
-            {icons}
+            {getIcons()}
         </div>
     );
 }
