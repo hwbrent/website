@@ -11,12 +11,14 @@ const SIZE = 52;
  */
 export default function Icon(png, key) {
     return (
-        <Image
-            src    = {png.src}
-            width  = {SIZE}
-            height = {SIZE}
-            alt    = {''}
-            key    = {key}
-        />
+        <div className='icon'>
+            <Image
+                src    = {png.src}
+                width  = {SIZE}
+                height = {SIZE}
+                alt    = {''}
+                key    = {key}
+            />
+        </div>
     );
 }
