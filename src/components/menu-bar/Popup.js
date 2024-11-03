@@ -69,4 +69,9 @@ export function placePopup(menu) {
  * @param {string} name - the name of the menu; this lets us know what the contents
  * should be
  */
-export function populatePopup() {}
+export function populatePopup() {
+    // first, empty the popup of any prior contents
+    while (popup.firstChild) {
+        popup.removeChild(popup.firstChild);
+    }
+}
