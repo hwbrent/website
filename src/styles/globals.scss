@@ -81,6 +81,10 @@ body {
         display: flex;
         flex-direction: column;
 
+        // add a bit of a gap between the labels/symbols and the popup edge
+        padding-left: 15px;
+        padding-right: 15px;
+
         .popup-row {
             display: flex;
             flex-direction: row;
