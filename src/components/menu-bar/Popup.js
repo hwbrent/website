@@ -16,6 +16,9 @@ export function initPopup() {
 
     // Add a class to allow styling
     popup.classList.add('popup');
+
+    // hide it by default
+    hidePopup();
 }
 
 /**
