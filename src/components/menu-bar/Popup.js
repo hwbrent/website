@@ -78,6 +78,10 @@ export function populatePopup(application, menuName) {
         popup.removeChild(popup.firstChild);
     }
 
-    console.log(application, menuName);
-    console.log(config[application][menuName]);
+    // get the popup contents from the config JSON file
+    const contents = config[application][menuName];
+
+    if (contents.length === 0) {
+        return;
+    }
 }
