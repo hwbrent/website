@@ -2,9 +2,13 @@
     "Finder": {
         "Finder": [
             { "contents": ["About Finder", ""] },
+            { "separator": true },
             { "contents": ["Settings", "⌘,"] },
+            { "separator": true },
             { "contents": ["Empty Bin", "⇧⌘⌫"] },
+            { "separator": true },
             { "contents": ["Services", ">"] },
+            { "separator": true },
             { "contents": ["Hide Finder", "⌘H"] },
             { "contents": ["Hide Others", "⌥⌘H"] },
             {

@@ -87,6 +87,14 @@ export function populatePopup(application, menuName) {
 
     // 'configEntry' is an array of objects. each object is a "row" in the popup
     for (const row of configEntry) {
+        const { contents, disabled, separator } = row;
+
+        if (separator) {
+            const hr = document.createElement('hr');
+            popup.appendChild(hr);
+            continue;
+        }
+
         // wrapper for the label and icons
         const wrapperEl = document.createElement('div');
         popup.appendChild(wrapperEl);
@@ -100,8 +108,6 @@ export function populatePopup(application, menuName) {
         // e.g. '⌘H'
         const symbolsEl = document.createElement('div');
         wrapperEl.appendChild(symbolsEl);
-
-        const { contents, disabled } = row;
 
         // add the text contents from the config to the elements
         const [labelText, symbolsText] = contents;
