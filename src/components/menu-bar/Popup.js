@@ -36,6 +36,17 @@ export function hidePopup() {
     popup.style.display = 'none';
 }
 
+/**
+ * @summary Positions the popup relative to the given menu
+ * @description The majority of the time, in macOS, the left hand edge of the popup
+ * is level with the furthest-left gap which is highlighted. That's what this function
+ * achieves
+ */
 export function placePopup() {}
 
+/**
+ * @summary Adds contents to the popup
+ * @description Adds any of the given contents to `<div>`s inside the popup, with
+ * separators (`<hr>`s) where specified
+ */
 export function populatePopup() {}
