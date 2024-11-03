@@ -133,10 +133,14 @@ function Menu(...props) {
         // handle the highlighting stuff
         onMouseEvent(event);
 
-        // place and populate the popup
+        // place the popup
         const menu = event.currentTarget;
         placePopup(menu);
-        populatePopup(menu.name);
+
+        // populate the popup
+        const { application } = menu.parentElement.dataset;
+        const name = menu.getAttribute('name');
+        populatePopup(application, name);
     };
 
     const menu = (
@@ -161,7 +165,8 @@ function Menu(...props) {
 }
 
 // show the finder menus by default
-const menus = exampleMenus['Finder'];
+const application = 'Finder';
+const menus = exampleMenus[application];
 const renderMenus = () => menus.map(Menu);
 
 /**
@@ -175,7 +180,10 @@ export default function AppMenus() {
     useOnMount(initPopup);
 
     return (
-        <div className="app-menus">
+        <div
+            className="app-menus"
+            data-application={application}
+        >
             {renderMenus()}
         </div>
     );

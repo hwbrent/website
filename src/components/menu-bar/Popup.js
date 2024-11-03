@@ -1,3 +1,5 @@
+import config from '@/components/configs/popup';
+
 /**
  * @summary The little window that appears under a menu when it's highlighted
  * @type {HTMLDivElement}
@@ -66,12 +68,16 @@ export function placePopup(menu) {
  * @summary Adds contents to the popup
  * @description Adds any of the given contents to `<div>`s inside the popup, with
  * separators (`<hr>`s) where specified
- * @param {string} name - the name of the menu; this lets us know what the contents
+ * @param {string} application - the current application open. "Finder" by default
+ * @param {string} menuName - the name of the menu; this lets us know what the contents
  * should be
  */
-export function populatePopup() {
+export function populatePopup(application, menuName) {
     // first, empty the popup of any prior contents
     while (popup.firstChild) {
         popup.removeChild(popup.firstChild);
     }
+
+    console.log(application, menuName);
+    console.log(config[application][menuName]);
 }
