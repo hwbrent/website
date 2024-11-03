@@ -79,9 +79,35 @@ export function populatePopup(application, menuName) {
     }
 
     // get the popup contents from the config JSON file
-    const contents = config[application][menuName];
+    const configEntry = config[application][menuName];
 
-    if (contents.length === 0) {
+    if (configEntry.length === 0) {
         return;
+    }
+
+    // 'configEntry' is an array of objects. each object is a "row" in the popup
+    for (const row of configEntry) {
+        // wrapper for the label and icons
+        const wrapperEl = document.createElement('div');
+        popup.appendChild(wrapperEl);
+
+        // the text on the left of the row
+        // e.g. 'Hide Visual Studio Code'
+        const labelEl = document.createElement('div');
+        wrapperEl.appendChild(labelEl);
+
+        // the symbols on the right of the row
+        // e.g. '⌘H'
+        const symbolsEl = document.createElement('div');
+        wrapperEl.appendChild(symbolsEl);
+
+        const { contents, disabled } = row;
+
+        // add the text contents from the config to the elements
+        const [labelText, symbolsText] = contents;
+        labelEl.textContent = labelText;
+        symbolsEl.textContent = symbolsText;
+
+        wrapperEl.dataset.disabled = disabled;
     }
 }
