@@ -89,6 +89,9 @@ body {
         padding-top: 5px;
         padding-bottom: 5px;
 
+        // just grabbed the tooltip value. they seem similar, idk
+        border-radius: 5px;
+
         .popup-row {
             display: flex;
             flex-direction: row;
