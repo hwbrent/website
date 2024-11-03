@@ -88,6 +88,15 @@ body {
             // make the label appear on the far left, and the symbols on the far right
             justify-content: space-between;
 
+            // the label
+            :first-child {
+                // The idea of this is to give a minimum gap of 35px between the
+                // label and the symbols. The longest label will have a 35px margin,
+                // and the other labels will have the a gap that's the same size or
+                // bigger
+                margin-right: 35px;
+            }
+
             &:hover {
                 // i hovered over an actual row in macos, took a screenshot, then used
                 // a colour picker to get this value
