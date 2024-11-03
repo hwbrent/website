@@ -133,13 +133,15 @@ function Menu(...props) {
         onMouseEvent(event);
 
         // place and populate the popup
-        placePopup();
-        populatePopup();
+        const menu = event.currentTarget;
+        placePopup(menu);
+        populatePopup(menu.name);
     };
 
     const menu = (
         <div
             className={className}
+            name={name}
             onMouseEnter={onMouseEnter}
             onMouseLeave={onMouseEvent}
             onClick={onClick}
