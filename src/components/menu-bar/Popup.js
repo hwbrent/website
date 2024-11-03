@@ -21,13 +21,17 @@ function initPopup() {
 /**
  * @summary Shows the popup under the given menu
  */
-export function showPopup(wrapperRef) {
+export function showPopup() {
     if (!popup) {
         initPopup();
     }
+
+    popup.style.display = '';
 }
 
 /**
  * @summary Hides the popup
  */
-export function hidePopup() {}
+export function hidePopup() {
+    popup.style.display = 'none';
+}

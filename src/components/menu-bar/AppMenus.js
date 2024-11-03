@@ -1,3 +1,5 @@
+import { showPopup, hidePopup } from "./Popup";
+
 const exampleMenus = {
     'Finder': [
         'Finder', 'File', 'Edit', 'View', 'Go', 'Window', 'Help'
@@ -9,6 +11,17 @@ const exampleMenus = {
 
 // whether or not we should be highlighting the menus when the mouse is over them
 let highlightMode = false;
+
+/** @param {boolean} value */
+function setHighlightMode(value) {
+    highlightMode = value;
+
+    if (highlightMode) {
+        showPopup();
+    } else {
+        hidePopup();
+    }
+}
 
 /**
  * @summary Handles the (un)highlighting of a menu
@@ -43,7 +56,7 @@ function handleHighlight(element, methodName) {
 
 const onClick = (event1) => {
     // toggle the highlight mode on/off
-    highlightMode = !highlightMode
+    setHighlightMode(!highlightMode);
 
     // if highlight mode was just turned off, don't do anything
     if (!highlightMode) {
@@ -57,7 +70,7 @@ const onClick = (event1) => {
         // stop 'onClick' getting called again if we click again on a menu
         event2.stopPropagation();
 
-        highlightMode = false;
+        setHighlightMode(false);
 
         // had to add in Array.From because there was some weird behaviour without it.
         // basically there are always five elements to un-highlight, but only three
