@@ -43,7 +43,25 @@ export function hidePopup() {
  * achieves
  * @param {HTMLDivElement} menu - the menu that the popup should be placed relative to
  */
-export function placePopup(menu) {}
+export function placePopup(menu) {
+    // get the furthest-left highlighted gap next to 'menu'
+    const gap = menu.previousElementSibling.previousElementSibling;
+
+    // this is the x coordinate of the left side of the gap. we'll use this for
+    // the popup too
+    const popupLeft = gap.getBoundingClientRect().left;
+
+    // the top of the popup must line up with the bottom of the menu bar. so let's use
+    // that value
+    const bar = menu.parentElement.parentElement;
+    const popupTop = bar.getBoundingClientRect().bottom;
+
+    console.log(gap, popupLeft, popupTop);
+
+    // place the popup
+    popup.style.left = `${popupLeft}px`;
+    popup.style.top = `${popupTop}px`;
+}
 
 /**
  * @summary Adds contents to the popup
