@@ -39,8 +39,8 @@ function handleHighlight(element, methodName) {
     // helper to call either classList.add or classList.remove
     const action = (el, otherClass = null) => {
         const classes = el.classList;
-        const method = classes[methodName].bind(classes)
-        method('highlighted')
+        const method = classes[methodName].bind(classes);
+        method('highlighted');
 
         if (otherClass) {
             method(otherClass);
@@ -126,7 +126,7 @@ function Menu(...props) {
     // if it's the second menu (i.e. the first with text), make the text bold
     let className = "menu";
     if (index === 0) {
-        className += ' bold'
+        className += ' bold';
     }
 
     const onMouseEnter = (event) => {
