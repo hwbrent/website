@@ -98,6 +98,7 @@ export function populatePopup(application, menuName) {
         // wrapper for the label and icons
         const wrapperEl = document.createElement('div');
         popup.appendChild(wrapperEl);
+        wrapperEl.classList.add('popup-row');
 
         // the text on the left of the row
         // e.g. 'Hide Visual Studio Code'

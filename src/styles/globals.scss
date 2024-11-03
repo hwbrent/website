@@ -74,6 +74,19 @@ body {
         }
     }
 
+    .popup {
+        display: flex;
+        flex-direction: column;
+
+        .popup-row {
+            display: flex;
+            flex-direction: row;
+
+            // make the label appear on the far left, and the symbols on the far right
+            justify-content: space-between;
+        }
+    }
+
     // Need to wrap the dock in a wrapper, and apply the dock positioning to the wrapper,
     // because otherwise, when we scale the dock, it messes up the positioning too
     .dock-wrapper {
