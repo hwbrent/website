@@ -85,6 +85,12 @@ body {
             // make the label appear on the far left, and the symbols on the far right
             justify-content: space-between;
         }
+
+        hr {
+            // make the separator strech across the whole popup. otherwise, it's just
+            // a dot for some reason
+            width: 100%;
+        }
     }
 
     // Need to wrap the dock in a wrapper, and apply the dock positioning to the wrapper,
