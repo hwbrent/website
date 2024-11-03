@@ -84,6 +84,12 @@ body {
 
             // make the label appear on the far left, and the symbols on the far right
             justify-content: space-between;
+
+            &:hover {
+                // i hovered over an actual row in macos, took a screenshot, then used
+                // a colour picker to get this value
+                background-color: #2269D5;
+            }
         }
 
         hr {
