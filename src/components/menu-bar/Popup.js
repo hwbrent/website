@@ -114,6 +114,6 @@ export function populatePopup(application, menuName) {
         labelEl.textContent = labelText;
         symbolsEl.textContent = symbolsText;
 
-        wrapperEl.dataset.disabled = disabled;
+        wrapperEl.dataset.disabled = disabled || false;
     }
 }
