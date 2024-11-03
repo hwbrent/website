@@ -85,6 +85,10 @@ body {
         padding-left: 15px;
         padding-right: 15px;
 
+        // add a tiny bit of space at the top and bottom
+        padding-top: 5px;
+        padding-bottom: 5px;
+
         .popup-row {
             display: flex;
             flex-direction: row;
