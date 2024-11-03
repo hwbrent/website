@@ -33,10 +33,13 @@ const getDateTimeString = () => {
     // get the current date
     const now = new Date();
 
-    // get and format the date like in macOS
-    const date =
-        formatDate(now) // e.g. 'Sat, 19 Oct'
-        .replace(',', ''); // e.g. 'Sat 19 Oct'
+    // Get and format the date like in macOS. We need to reverse the order of the
+    // month and date
+    let dateComponents =
+        formatDate(now) // e.g. 'Sat, Oct 19'
+        .replace(',', ''); // e.g. 'Sat Oct 19'
+    const [ dotw, month, dateNumber ] = dateComponents.split(' ');
+    const date = `${dotw} ${dateNumber} ${month}`; // e.g. 'Sat 19 Oct'
 
     // get and format the time like in macOS
     const time = formatTime(now); // e.g. '21:39'
