@@ -35,3 +35,7 @@ export function showPopup() {
 export function hidePopup() {
     popup.style.display = 'none';
 }
+
+export function placePopup() {}
+
+export function populatePopup() {}

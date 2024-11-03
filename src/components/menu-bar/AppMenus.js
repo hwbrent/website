@@ -1,4 +1,4 @@
-import { showPopup, hidePopup } from "./Popup";
+import { showPopup, hidePopup, placePopup, populatePopup } from "./Popup";
 
 const exampleMenus = {
     'Finder': [
@@ -128,10 +128,19 @@ function Menu(...props) {
         className += ' bold'
     }
 
+    const onMouseEnter = (event) => {
+        // handle the highlighting stuff
+        onMouseEvent(event);
+
+        // place and populate the popup
+        placePopup();
+        populatePopup();
+    };
+
     const menu = (
         <div
             className={className}
-            onMouseEnter={onMouseEvent}
+            onMouseEnter={onMouseEnter}
             onMouseLeave={onMouseEvent}
             onClick={onClick}
         >
