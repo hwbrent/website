@@ -1,0 +1,23 @@
+{
+    "Finder": {
+        "Finder": [
+            { "contents": ["About Finder", ""] },
+            { "contents": ["Settings", "⌘,"] },
+            { "contents": ["Empty Bin", "⇧⌘⌫"] },
+            { "contents": ["Services", ">"] },
+            { "contents": ["Hide Finder", "⌘H"] },
+            { "contents": ["Hide Others", "⌥⌘H"] },
+            {
+                "contents": ["Show All", ""],
+                "disabled": true
+            }
+        ],
+        "File": [],
+        "Edit": [],
+        "View": [],
+        "Go": [],
+        "Window": [],
+        "Help": []
+    },
+    "VSCode": {}
+}
