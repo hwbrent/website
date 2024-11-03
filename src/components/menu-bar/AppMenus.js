@@ -1,4 +1,5 @@
-import { showPopup, hidePopup, placePopup, populatePopup } from "./Popup";
+import { useOnMount } from '@/utils/utils';
+import { initPopup, showPopup, hidePopup, placePopup, populatePopup } from "./Popup";
 
 const exampleMenus = {
     'Finder': [
@@ -170,6 +171,9 @@ const renderMenus = () => menus.map(Menu);
  * @returns {React.JSX}
  */
 export default function AppMenus() {
+    // Init the popup when the app menus mount
+    useOnMount(initPopup);
+
     return (
         <div className="app-menus">
             {renderMenus()}

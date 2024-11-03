@@ -7,7 +7,7 @@ let popup;
 /**
  * @summary Creates the popup element
  */
-function initPopup() {
+export function initPopup() {
     popup = document.createElement('div');
 
     // add it to the DOM
