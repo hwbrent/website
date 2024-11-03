@@ -22,10 +22,6 @@ export function initPopup() {
  * @summary Shows the popup under the given menu
  */
 export function showPopup() {
-    if (!popup) {
-        initPopup();
-    }
-
     popup.style.display = '';
 }
 
