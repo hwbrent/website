@@ -114,6 +114,11 @@ body {
                 // a colour picker to get this value
                 background-color: #2269D5;
             }
+
+            // if the row is disabled, make the text lighter
+            &[data-disabled="true"] {
+                color: rgba(black, 0.35);
+            }
         }
 
         hr {
