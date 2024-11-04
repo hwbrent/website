@@ -113,7 +113,7 @@ body {
             }
 
             // apply a colour when hovering over the row (if it's not disabled)
-            &:hover:not([data-disabled="true"]) {
+            &:hover:not([disabled]) {
                 // i hovered over an actual row in macos, took a screenshot, then used
                 // a colour picker to get this value
                 background-color: #2269D5;

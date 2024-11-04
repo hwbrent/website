@@ -101,6 +101,9 @@ export function populatePopup(application, menuName) {
         wrapperEl.classList.add('popup-row');
 
         if (disabled) {
+            // add the 'disabled' attribute
+            wrapperEl.setAttribute('disabled', true);
+
             // make the text appear lighter
             wrapperEl.classList.add('lighter-text');
         }
@@ -120,7 +123,5 @@ export function populatePopup(application, menuName) {
         const [labelText, symbolsText] = contents;
         labelEl.textContent = labelText;
         symbolsEl.textContent = symbolsText;
-
-        wrapperEl.dataset.disabled = disabled || false;
     }
 }
