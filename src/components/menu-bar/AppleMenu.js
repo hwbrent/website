@@ -48,13 +48,21 @@ function scaleDims() {
 export default function AppleMenu() {
     const [ dims, setDims ] = useState(defaultDims);
     const [ width, height ] = dims;
+    const [ isScaled, setIsScaled ] = useState(false);
+
+    useOnMount(() => {
+        // scale the image down
+        setDims(scaleDims());
+
+        // indicate that the apple logo can now be shown. this prevents a scenario
+        // where the apple logo momentarily appears massive on the screen before
+        // shrinking to its desired size
+        setIsScaled(true);
+    });
+
     const { src } = appleLogoDark;
 
-    // scale the image down
-    const scale = () => setDims(scaleDims());
-    useOnMount(scale);
-
-    return (
+    return !isScaled ? null : (
         <div className='apple-menu'>
             <Image
                 src={src}
