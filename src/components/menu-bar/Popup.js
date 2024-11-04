@@ -55,9 +55,11 @@ export function placePopup(menu) {
     // the top of the popup must line up with the bottom of the menu bar. so let's use
     // that value
     const bar = menu.parentElement.parentElement;
-    const popupTop = bar.getBoundingClientRect().bottom;
 
-    console.log(gap, popupLeft, popupTop);
+    // the +1 is because otherwise there's a weird clashing of the shadow (i think) of
+    // the menu bar and the top of the popup. adding a pixel gap makes it look a lot
+    // better imo
+    const popupTop = bar.getBoundingClientRect().bottom + 1;
 
     // place the popup
     popup.style.left = `${popupLeft}px`;
