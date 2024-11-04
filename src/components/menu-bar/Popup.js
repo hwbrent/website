@@ -100,6 +100,11 @@ export function populatePopup(application, menuName) {
         popup.appendChild(wrapperEl);
         wrapperEl.classList.add('popup-row');
 
+        if (disabled) {
+            // make the text appear lighter
+            wrapperEl.classList.add('lighter-text');
+        }
+
         // the text on the left of the row
         // e.g. 'Hide Visual Studio Code'
         const labelEl = document.createElement('div');
@@ -108,6 +113,7 @@ export function populatePopup(application, menuName) {
         // the symbols on the right of the row
         // e.g. '⌘H'
         const symbolsEl = document.createElement('div');
+        symbolsEl.classList.add('lighter-text'); // same styling as disabled
         wrapperEl.appendChild(symbolsEl);
 
         // add the text contents from the config to the elements

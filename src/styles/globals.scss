@@ -31,6 +31,10 @@ body {
         font-weight: bold;
     }
 
+    .lighter-text {
+        color: rgba(black, 0.35);
+    }
+
     .menu-bar {
         width: 100%;
 
@@ -113,11 +117,6 @@ body {
                 // i hovered over an actual row in macos, took a screenshot, then used
                 // a colour picker to get this value
                 background-color: #2269D5;
-            }
-
-            // if the row is disabled, make the text lighter
-            &[data-disabled="true"] {
-                color: rgba(black, 0.35);
             }
         }
 
