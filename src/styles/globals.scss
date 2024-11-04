@@ -110,6 +110,14 @@ body {
         // Add a gap between the items. Trial and error again. Seems close
         column-gap: 14px;
 
+        .icon {
+            // without this, the icon div was weirdly a bit bigger in height than in
+            // width, so it made the icon look off-centre vertically.
+            // this value is the same as the one specified at the top of Icon.js
+            height: 52px;
+            width:  52px;
+        }
+
         // scale everything down in size; with all the default dock icons, at normal size,
         // the dock is way too long, so everything goes off the screen
         transform: scale(0.75);
