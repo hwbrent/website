@@ -5,7 +5,7 @@ import AppStorePNG  from 'public/dock-icons/App Store.png';
 import CalendarPNG  from 'public/dock-icons/Calendar.png';
 import ContactsPNG  from 'public/dock-icons/Contacts.png';
 import DownloadsPNG from 'public/dock-icons/Downloads.png';
-import FacetimePNG  from 'public/dock-icons/Facetime.png';
+import FaceTimePNG  from 'public/dock-icons/FaceTime.png';
 import FinderPNG    from 'public/dock-icons/Finder.png';
 import FreeformPNG  from 'public/dock-icons/Freeform.png';
 import KeynotePNG   from 'public/dock-icons/Keynote.png';
@@ -37,7 +37,7 @@ const ICONS = [
     MailPNG,
     MapsPNG,
     PhotosPNG,
-    FacetimePNG,
+    FaceTimePNG,
     CalendarPNG,
     ContactsPNG,
     RemindersPNG,
