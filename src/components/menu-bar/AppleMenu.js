@@ -3,9 +3,9 @@ import { useOnMount } from '@/utils/utils';
 
 import Image from 'next/image';
 
-import appleLogoDark from 'public/apple-logo-dark.svg';
+import appleLogoLight from 'public/apple-logo-light.svg';
 
-const defaultDims = [ appleLogoDark.width, appleLogoDark.height ];
+const defaultDims = [ appleLogoLight.width, appleLogoLight.height ];
 
 // weirdly, calling parseFloat on a string like '16px' is able to get the numeric
 // value fine.
@@ -60,7 +60,7 @@ export default function AppleMenu() {
         setIsScaled(true);
     });
 
-    const { src } = appleLogoDark;
+    const { src } = appleLogoLight;
 
     return !isScaled ? null : (
         <div className='apple-menu'>
