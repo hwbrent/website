@@ -54,6 +54,9 @@ body {
             display: inherit;
             justify-content: flex-start; // Pack on left side
 
+            // TODO: fix height of app menus to achieve enough padding/margin above/below
+            // when highlighted
+
             .highlighted {
                 background: rgba(white, 0.5); // make background lighter
 
