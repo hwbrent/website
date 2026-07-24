@@ -1,6 +1,6 @@
 ## Summary
 
-Basically, this is meant to emulate the look and feel of macOS Sequoia. Built using Next.js
+Basically, this is meant to emulate the look and feel of macOS Tahoe. Built using Next.js
 
 ## References
 
