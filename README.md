@@ -26,6 +26,16 @@ Most can be grabbed by doing the following:
 - Right-click the first image
 - Click "Export As"
 
+Those that couldn't be retrieved in that way:
+
+| App icon | Source |
+| - | - |
+| Launchpad | https://macosicons.com/?icon=ncy8MiCAOA |
+| Keynote | https://macosicons.com/?icon=SlTcHVkQP5 |
+| Numbers | https://macosicons.com/?icon=pfooNXbNnX |
+| Pages | https://macosicons.com/?icon=hHeqYyTXZ3 |
+| Trash | `/System/Library/CoreServices/CoreTypes.bundle/Contents/Resources/FullTrashIcon.icns` |
+
 ## To do:
 
 ##### Menu bar
