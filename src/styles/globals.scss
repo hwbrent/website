@@ -56,19 +56,19 @@ body {
 
             .highlighted {
                 background: rgba(white, 0.5); // make background lighter
-            }
 
-            .gap {
-                width: 7px;
-
-                .left {
+                &.left {
                     border-top-left-radius: 20px;
                     border-bottom-left-radius: 20px;
                 }
-                .right {
+                &.right {
                     border-top-right-radius: 20px;
                     border-bottom-right-radius: 20px;
                 }
+            }
+
+            .gap {
+                width: 4px;
             }
         }
 
