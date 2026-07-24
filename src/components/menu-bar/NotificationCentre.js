@@ -24,12 +24,12 @@ const getTimeFormatter = () => new Intl.DateTimeFormat(getLocale(), timeFormatOp
 const formatTime = (date) => getTimeFormatter().format(date);
 
 /**
- * @returns {string} The current date/time, formatted as in macOS
+ * @returns {{date: string, time: string}} The current date/time, formatted as in macOS
  * @example
  * const dateTime = getDateTimeString();
  * console.log(dateTime); // 'Sat 19 Oct 21:39'
  */
-const getDateTimeString = () => {
+const getDateTimeStrings = () => {
     // get the current date
     const now = new Date();
 
@@ -44,8 +44,7 @@ const getDateTimeString = () => {
     // get and format the time like in macOS
     const time = formatTime(now); // e.g. '21:39'
 
-    const string = date + ' ' + time; // e.g. 'Sat 19 Oct 21:39'
-    return string;
+    return { date, time }
 };
 
 /**
@@ -56,14 +55,20 @@ const getDateTimeString = () => {
  */
 export default function NotificationCentre() {
     // the string that will be shown to the user in the widget
-    const [ dateTime, setDateTime ] = useState('');
+    const [ date, setDate ] = useState('');
+    const [ time, setTime ] = useState('');
 
-    const updateDateTimeString = () => setDateTime(getDateTimeString());
+    const updateDateTimeString = () => {
+        const { date, time } = getDateTimeStrings();
+        setDate(date);
+        setTime(time);
+    };
     useDoEverySecond(updateDateTimeString);
 
     return (
         <div className="notification-centre">
-            {dateTime}
+            <div className="date">{date}</div>
+            <div className="time">{time}</div>
         </div>
     );
 };

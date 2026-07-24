@@ -77,7 +77,12 @@ body {
         }
 
         .notification-centre {
+            display: flex;
+            flex-direction: row;
+
             margin-left: auto; // Align on far right of menu bar
+
+            column-gap: 10px;
         }
     }
 
