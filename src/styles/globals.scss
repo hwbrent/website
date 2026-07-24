@@ -57,6 +57,7 @@ body {
             .highlighted {
                 background: rgba(white, 0.5); // make background lighter
 
+                // TODO: make radius much rounder (basically semi-circular)
                 &.left {
                     border-top-left-radius: 20px;
                     border-bottom-left-radius: 20px;
