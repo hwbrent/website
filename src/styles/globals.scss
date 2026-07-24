@@ -35,7 +35,8 @@ body {
     .menu-bar {
         width: 100%;
 
-        // stop menu bar contents from being right up against left/right of screen
+        // stop menu bar contents from being right up against left/right/top of screen
+        padding-top: 12.5px;
         padding-left: 15px;
         padding-right: 15px;
         box-sizing: border-box; // ensures width stays at 100% w/o padding pushing
