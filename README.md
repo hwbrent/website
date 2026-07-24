@@ -13,6 +13,20 @@ Nomenclature and some design choices (the rest are from my own Mac) originate fr
 
 - Background: [Website](https://wallpaperaccess.com/macos-tahoe), [download link](https://wallpaperaccess.com/download/macos-tahoe-25735733)
 
+### Dock icons
+
+For each icon:
+
+- Find the item in Finder
+- Right-click the item
+- Click "Get Info"
+- In the top left, click the icon
+- Do <kbd>Ctrl</kbd>+<kbd>C</kbd>
+- Open the Preview app
+- Go to File -> New From Clipboard (or <kbd>Cmd</kbd>+<kbd>N</kbd>)
+- Right-click the first image
+- Click "Export As"
+
 ## To do:
 
 ##### Menu bar
