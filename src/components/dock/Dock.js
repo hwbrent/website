@@ -1,6 +1,3 @@
-// Source: https://macosicons.com/#/
-// Most of them came in as .icns files, which apparently are native to MacOS and not
-// able to be (easily) loaded. So I converted them to .png format
 import AppStorePNG  from 'public/dock-icons/App Store.png';
 import CalendarPNG  from 'public/dock-icons/Calendar.png';
 import ContactsPNG  from 'public/dock-icons/Contacts.png';

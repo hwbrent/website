@@ -15,8 +15,7 @@ Nomenclature and some design choices (the rest are from my own Mac) originate fr
 
 ### Dock icons
 
-For each icon:
-
+Most can be grabbed by doing the following:
 - Find the item in Finder
 - Right-click the item
 - Click "Get Info"
