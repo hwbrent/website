@@ -94,6 +94,9 @@ body {
     }
 
     .dock {
+        // TODO: make border colour removed in the top-right and bottom-left of the dock.
+        //       it's a subtle effect but once you notice it, you don't un-notice it
+
         // This is just the height that the dock appears to be currently on my Mac
         height: 64px;
         // width: 964px;
