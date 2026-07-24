@@ -117,6 +117,7 @@ function Menu(...props) {
 
     const menu = (
         <div
+            key={index}
             className={className}
             onMouseEnter={onMouseEvent}
             onMouseLeave={onMouseEvent}
